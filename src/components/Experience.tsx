@@ -1,0 +1,73 @@
+import SectionReveal from "./SectionReveal";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+import { Trophy, MapPin, Users, ExternalLink } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+const hackathons = [
+  {
+    name: "Loop Hackathon 2026",
+    venue: "Kharghar, Navi Mumbai",
+    organizer: "Bharati Vidhyapeeth Collage of Engineering",
+    certificateLink: "https://drive.google.com/file/d/1WKGhFdrDR0AaxvjIGpZJrh0YWMg8hhE5/view?usp=sharing",
+  },
+  {
+    name: "Agri-Tech hackathon 2026",
+    venue: "Vidhyavihar, Mumbai",
+    organizer: "K.J.Somaiya School of Engineering Somaiya Vidyavihar University",
+    certificateLink: "https://drive.google.com/file/d/14MNjGaMZSjz3-7exb8tUfZaJkwi4oEQv/view?usp=sharing",
+  },
+  {
+    name: "Hack The Flame 2025",
+    venue: "Sion, Mumbai",
+    //organizer: "Maharashtra IT Department",
+    certificateLink: "https://drive.google.com/file/d/1hRP9QhFH-nav5eyQP30kciimPdOjJclO/view?usp=sharing",
+  },
+];
+
+const Experience = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+
+  return (
+    <section id="experience" className="py-24">
+      <div className="max-w-6xl mx-auto px-6">
+        <SectionReveal>
+          <h2 className="text-3xl font-bold mb-2">Experience</h2>
+          <p className="text-lg text-muted-foreground mb-10">Finalist at Hackathons</p>
+        </SectionReveal>
+        <div ref={ref} className="space-y-12">
+          {hackathons.map((hack, i) => (
+            <motion.div
+              key={hack.name}
+              initial={{ opacity: 0, x: -30 }}
+              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.6, delay: i * 0.15 }}
+              className="relative pl-8 border-l border-border max-w-2xl"
+            >
+              <div className="absolute -left-4 top-0 w-8 h-8 rounded-full bg-secondary border border-border flex items-center justify-center">
+                <Trophy size={16} className="text-muted-foreground" />
+              </div>
+              <h3 className="text-xl font-semibold text-foreground">{hack.name}</h3>
+              <div className="flex flex-wrap gap-x-4 gap-y-1 text-muted-foreground text-sm mb-4">
+                <span className="flex items-center gap-1"><MapPin size={14} /> {hack.venue}</span>
+                <span className="flex items-center gap-1"><Users size={14} /> {hack.organizer}</span>
+              </div>
+              <Button variant="outline" size="sm" asChild className="mt-1 w-fit">
+                <a
+                  href={hack.certificateLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <ExternalLink size={14} /> View Certificate
+                </a>
+              </Button>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Experience;
