@@ -25,7 +25,7 @@ const projects = [
     title: "Garage Management System",
     description: "A web-based application designed to manage garage operations including vehicle service tracking, billing, and customer management.",
     tech: ["Java","Spring Boot","React", "Node.js", "MySQL"],
-    videoUrl: "../../public/videos/Garage-Management.mp4",
+    videoUrl: "https://drive.google.com/uc?export=download&id=1AZzL6p4N5TxfgmHObiE3b2CV_sAkPm3O",
     githubUrl: "https://github.com/Dayeshlate/Garage-Management-Application.git",
     liveUrl: "https://garage-management-application.vercel.app/",
   },
@@ -33,15 +33,30 @@ const projects = [
     title: "Money Mangement Application",
     description: "A money management application designed to track and manage financial transactions efficiently, with features such as adding income/expenses, searching records, and maintaining organized financial data.",
     tech: ["java","Spring Boot","Node.js", "React"],
-    videoUrl: "../../public/videos/Money-management.mp4",
+    videoUrl: "https://drive.google.com/uc?export=download&id=1ftt599-2zdkEYRaycsEQkKs85k34enJJ",
     githubUrl: "https://github.com/Dayeshlate/Money-Mangement-Application.git",
     liveUrl: "https://money-mangement-application.vercel.app/",
   },
 ];
 
+const getGoogleDrivePreviewUrl = (url: string) => {
+  const filePathMatch = url.match(/\/file\/d\/([^/]+)/);
+  if (filePathMatch?.[1]) {
+    return `https://drive.google.com/file/d/${filePathMatch[1]}/preview`;
+  }
+
+  const idParamMatch = url.match(/[?&]id=([^&]+)/);
+  if (idParamMatch?.[1]) {
+    return `https://drive.google.com/file/d/${idParamMatch[1]}/preview`;
+  }
+
+  return null;
+};
+
 const ProjectCard = ({ title, description, tech, videoUrl, githubUrl, liveUrl, index }: typeof projects[0] & { index: number }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const drivePreviewUrl = getGoogleDrivePreviewUrl(videoUrl);
 
   return (
     <motion.div
@@ -72,19 +87,31 @@ const ProjectCard = ({ title, description, tech, videoUrl, githubUrl, liveUrl, i
         <motion.div
           whileHover={{ scale: 1.8, y: -8, zIndex: 50 }}
           transition={{ duration: 0.28, ease: "easeOut" }}
-          className="relative rounded-lg overflow-hidden border border-border/20 origin-center"
+          className="relative rounded-2xl overflow-hidden border border-border/30 origin-center transition-[border-color,box-shadow] duration-300 hover:border-primary/60 hover:shadow-[0_0_0_1px_hsl(var(--primary)/0.35)]"
         >
-          <video
-            className="w-full h-auto block rounded-lg"
-            autoPlay
-            loop
-            playsInline
-            muted
-            preload="metadata"
-          >
-            <source src={videoUrl} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          {drivePreviewUrl ? (
+            <div className="w-full aspect-video rounded-2xl overflow-hidden bg-black">
+              <iframe
+                src={drivePreviewUrl}
+                className="w-full h-full rounded-2xl"
+                allow="autoplay; encrypted-media"
+                allowFullScreen
+                title={`${title} video preview`}
+              />
+            </div>
+          ) : (
+            <video
+              className="w-full h-auto block rounded-2xl"
+              autoPlay
+              loop
+              playsInline
+              muted
+              preload="metadata"
+            >
+              <source src={videoUrl} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          )}
         </motion.div>
       </div>
       <div className="mt-4 flex justify-between items-center">
