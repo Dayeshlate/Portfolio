@@ -27,7 +27,7 @@ const Education = () => {
           <p className="text-muted-foreground text-sm mb-2 mt-2">Mumbai University · 2024 - 2028</p>
           <p className="text-muted-foreground text-sm mb-4">At. Vasantdada patil pratishthan's collage of engineering and visual arts, sion, Mumbai</p>
           <ul className="space-y-1 text-muted-foreground text-sm">
-            <li>• I am Second year student</li>
+            <li>• I am Third year student</li>
             <li>• Studying Information Technology</li>
           </ul>
           <p className="text-muted-foreground text-sm mt-4 mb-4">Currently Focus On studying</p>
