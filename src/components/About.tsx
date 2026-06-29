@@ -11,12 +11,13 @@ const About = () => (
       <SectionReveal>
         <h2 className="text-3xl font-bold mb-8">About Me</h2>
         <div className="max-w-3xl">
-          <p className="text-muted-foreground leading-relaxed mb-6">
-            I believe in:
-- Writing code the next engineer will thank me for
-- Automating away manual pain (hence DevOps focus)
-- Testing early, deploying often
-- Clear logging and observable systems</p>
+          <ul className="text-muted-foreground leading-relaxed mb-6">
+            <p>I believe in:</p>
+              <li>- Writing code the next engineer will thank me for</li>
+              <li>- Automating away manual pain (hence DevOps focus)</li>
+              <li>- Testing early, deploying often</li>
+              <li>- Clear logging and observable systems</li>
+          </ul>
           <p className="text-muted-foreground leading-relaxed mb-6">I have experience working with:</p>
           <div className="flex flex-wrap gap-3 mb-6">
             {techList.map((t) => (
