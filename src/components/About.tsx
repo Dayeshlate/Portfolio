@@ -37,6 +37,10 @@ const About = () => (
               <FileDown size={16} /> View Resume
             </a>
           </Button>
+          <Button variant="heroOutline" size="lg" >
+                <a href="https://github.com/Dayeshlate" target="_blank" rel="noopener noreferrer">
+              <FileDown size={16} /> GitHub
+              </Button>
         </div>
       </SectionReveal>
     </div>
