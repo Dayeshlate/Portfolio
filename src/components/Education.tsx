@@ -30,9 +30,8 @@ const Education = () => {
             <li>• I am Third year student</li>
             <li>• Studying Information Technology</li>
           </ul>
-          <p className="text-muted-foreground text-sm mt-4 mb-4">Currently Focus On studying</p>
           <ul className="space-y-1 text-muted-foreground text-sm">
-            <p>Deepening:</p>:
+            <p>Deepening:</p>
             <li>- Advanced Kubernetes patterns (DaemonSets, custom controllers)</li>
             <li>- Spring Security OAuth2 flows</li>
             <li>- Helm chart templating</li>
