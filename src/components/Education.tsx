@@ -32,10 +32,10 @@ const Education = () => {
           </ul>
           <p className="text-muted-foreground text-sm mt-4 mb-4">Currently Focus On studying</p>
           <ul className="space-y-1 text-muted-foreground text-sm">
-            Deepening:
-- Advanced Kubernetes patterns (DaemonSets, custom controllers)
-- Spring Security OAuth2 flows
-- Helm chart templating
+            <p>Deepening:</p>:
+            <li>- Advanced Kubernetes patterns (DaemonSets, custom controllers)</li>
+            <li>- Spring Security OAuth2 flows</li>
+            <li>- Helm chart templating</li>
 
           </ul>
         </motion.div>
