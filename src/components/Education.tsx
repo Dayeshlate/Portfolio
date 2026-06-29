@@ -32,8 +32,10 @@ const Education = () => {
           </ul>
           <p className="text-muted-foreground text-sm mt-4 mb-4">Currently Focus On studying</p>
           <ul className="space-y-1 text-muted-foreground text-sm">
-            <li>• Machine Learning</li>
-            <li>• Devops</li>
+            Deepening:
+- Advanced Kubernetes patterns (DaemonSets, custom controllers)
+- Spring Security OAuth2 flows
+- Helm chart templating
 
           </ul>
         </motion.div>
