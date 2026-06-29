@@ -22,7 +22,7 @@ const Hero = () => {
            Backend Developer | DevOps Enthusiast
           </p>
           <p className="text-muted-foreground mb-8 max-w-lg leading-relaxed">
-            I am a passionate software developer who enjoys building scalable applications and solving real-world problems. I specialize in backend development and modern web technologies.
+            I'm a 3rd-year IT engineering student building production-grade backend systems and DevOps pipelines. I specialize in Java Spring Boot microservices, containerization with Docker/Kubernetes, and CI/CD automation using GitLab and GitHub Actions.I'm drawn to problem-solving through infrastructure — how to make deployments reliable, logs searchable, and systems observable. Currently seeking a backend or DevOps internship where I can ship real features and learn from experienced engineers. My work spans full-stack projects (Garage Management System, Money Manager) and focused DevOps builds (Kubernetes KIND clusters, local Docker image orchestration, multi-stage CI/CD pipelines). I believe in writing code that's easy for the next developer to understand and deploy without surprises.
           </p>
           <div className="flex gap-4 flex-wrap">
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
