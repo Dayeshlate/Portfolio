@@ -12,7 +12,11 @@ const About = () => (
         <h2 className="text-3xl font-bold mb-8">About Me</h2>
         <div className="max-w-3xl">
           <p className="text-muted-foreground leading-relaxed mb-6">
-            Focused on backend engineering with experience in building APIs, managing databases, and deploying scalable applications using modern DevOps practices.</p>
+            I believe in:
+- Writing code the next engineer will thank me for
+- Automating away manual pain (hence DevOps focus)
+- Testing early, deploying often
+- Clear logging and observable systems</p>
           <p className="text-muted-foreground leading-relaxed mb-6">I have experience working with:</p>
           <div className="flex flex-wrap gap-3 mb-6">
             {techList.map((t) => (
