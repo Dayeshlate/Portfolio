@@ -33,7 +33,7 @@ const About = () => (
             I enjoy solving complex problems and continuously improving my development skills.
           </p>
           <Button variant="hero" size="lg" asChild className="transition-transform duration-200 hover:scale-105 active:scale-95">
-            <a href="https://drive.google.com/file/d/1gjpsuZzERn2P_1qBtp_jSyCh6cM7uRq6/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+            <a href="https://drive.google.com/file/d/1cu2UKIjnbX3s1XjNBZLy4arkgTkAeojC/view?usp=sharing" target="_blank" rel="noopener noreferrer">
               <FileDown size={16} /> View Resume
             </a>
           </Button>
